@@ -1,14 +1,28 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-  <title>Depot</title>
+  <title>Pragprog Booksオンラインストア</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body class='<%= controller.controller_name %>'>
-
-<%= yield %>
-
+  <div id="banner">
+    <%= image_tag("logo.png") %>
+    <%= @page_title || "Pragmatic Bookshelf" %>
+  </div>
+  <div id="columns">
+    <div id="side">
+      <ul>
+        <li><a href="http://www.athome.co.jp/">ホーム</a></li>
+        <li><a href="http://otoiawase.nttdocomo.co.jp/renewal.php">よくある質問</a></li>
+        <li><a href="http://headlines.yahoo.co.jp/hl">ニュース</a></li>
+        <li><a href="http://www.nttdocomo.co.jp/support/inquiry/">お問い合わせ</a></li>
+      </ul>
+    </div>
+    <div id="main">
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>
